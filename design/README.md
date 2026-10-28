@@ -11,54 +11,55 @@ Last updated: 2026-10-28
 - **Inspired by Asimov’s “The Last Question”** — themes of entropy, heat death, computation across cosmic time, a single persistent question.
 - **Restrained tech / cyberpunk feeling** — subtle circuit-like grids, data dissolution, binary fragments. Not flashy, not neon, not cyberpunk cliché.
 - **Future-oriented and computational** without decoration.
-- Posters must be easy to update in Mac Preview: clear empty zone for episode number + title.
+- Posters must be easy to update in Mac Preview: clear zones for episode number + title.
+- Must remain readable and strong as small covers / thumbnails.
 
 ## Concepts Considered
 
-### 1. The Persistent Question (Circuit Question Mark)
-Large white question mark formed by thin circuit traces and binary fragments on pure black. Thin horizontal rule near bottom for text zone.
+### 1. The Persistent Question (Circuit Question Mark) ✅ Chosen Direction
+Large white question mark formed by fine circuit traces and sparse binary fragments on pure black. Strong clear silhouette that stays readable at small sizes. Generous negative space. Title at the top, episode number under it, website at the very bottom.
 
-**Status:** Considered, not chosen.
+**Status:** Selected as the primary poster style (better for small covers than the dissolving grid).
 
-### 2. Entropy Field ✅ Chosen Direction
+### 2. Entropy Field
 Sparse geometric grid of thin white lines and dots. Dense at the top, slowly dissolves / breaks apart / fades toward the bottom. One tiny, perfectly sharp white question mark remains intact near the vertical center. Vast negative space. Clean lower third reserved for text.
 
-**Status:** Selected as the primary poster style.
+**Status:** Considered and initially liked, but rejected because it does not hold up well at small cover sizes.
 
 ### 3. Pure Signal
 Typography-led. Elegant white “THE LAST QUESTION” in the upper third. Thin horizontal broken data line or sparse binary fragment below that fades out. Clean empty lower band for episode text.
 
-**Status:** Strong secondary option. Liked after Entropy Field.
+**Status:** Strong secondary option. Liked, but not chosen for covers.
 
-## Final Chosen Design (Entropy Field)
+## Final Chosen Design (The Persistent Question)
 
-Reference poster includes:
-- Title: **The Last Question** (top, white, bold serif-like)
-- Dissolving grid of lines + dots
-- Small white `?` floating in the dissolving field
-- Bottom: **EP 00** (large) + **tlq.dev** underneath
+Reference poster layout:
+- Title: **The Last Question** at the top (elegant white font)
+- Episode number (e.g. **EP 00**) directly under the title
+- Large central question mark made of fine circuit traces + sparse binary fragments
+- Website **tlq.dev** at the very bottom of the cover
 
-The lower area is intentionally clean so episode number and title can be swapped in Preview (or any image editor) without touching the rest of the composition.
+The composition is intentionally simple and high-contrast so the episode number can be updated easily while the circuit question mark and overall structure stay locked.
 
-### Prompt used for Entropy Field (Grok Imagine)
-
-```
-Minimal black and white poster, pure solid black background, sparse geometric grid of thin precise white lines and dots that is denser at the top and slowly dissolves, breaks apart, and fades toward the bottom, one tiny perfectly sharp white question mark remaining intact near the vertical center, high contrast, vast negative space, completely clean empty lower third reserved for text, restrained cyberpunk aesthetic, entropy and heat-death theme, classy and elegant, inspired by Asimov’s The Last Question, no neon, no glow, no gradients, no people, no text, no logos, vertical poster composition
-```
-
-### Secondary Prompt (Pure Signal)
+### Prompt used (Grok Imagine)
 
 ```
-Minimal black and white poster, pure solid black background, elegant white typography reading "THE LAST QUESTION" in a refined geometric sans-serif or modern serif font positioned in the upper third, thin horizontal broken data line or sparse binary fragment directly below the title that fades out toward the edges, high contrast, vast negative space, completely clean empty lower band reserved for episode number and title, classy and restrained tech aesthetic, inspired by Asimov’s The Last Question, no neon, no glow, no gradients, no people, no extra text, no logos, vertical poster composition
+Minimal black and white poster, pure black background, large bold white question mark made of fine circuit traces and sparse binary fragments, very clean high-contrast silhouette readable at small thumbnail size, generous negative space, title "The Last Question" in elegant white font at the top, episode number "EP 00" in bold white below the title, website "tlq.dev" in white at the very bottom, thin horizontal rule near bottom if needed, classy restrained tech style, Asimov The Last Question inspired, no neon, no glow, no people, no extra text, vertical poster composition
 ```
+
+(The tighter version of the original Persistent Question prompt was used.)
+
+### Other prompts (for reference)
+
+Entropy Field and Pure Signal prompts are kept in git history if needed later.
 
 ## How to Update for a New Episode
 
-1. Start from the master Entropy Field base (or the current reference poster).
+1. Start from the master Persistent Question base (or the current reference poster).
 2. In Mac Preview (or any editor):
    - Change the episode number (currently “EP 00”).
-   - Add or replace the episode title in the reserved lower zone.
-3. Keep the grid, question mark, and overall composition untouched.
+   - Optionally adjust or add an episode title if desired in the upper text zone.
+3. Keep the circuit question mark, title treatment, and bottom website untouched.
 4. Export high-resolution PNG/JPG for Telegram (TLQ Dev) and the website (tlq.dev).
 
 ## Brand Notes
@@ -76,6 +77,6 @@ Minimal black and white poster, pure solid black background, elegant white typog
 ## Files
 
 - This document: `design/README.md`
-- Reference poster image should live next to this file (e.g. `design/poster-entropy-field-reference.jpg`) once committed.
+- Reference poster image: `design/poster-persistent-question-reference.jpg`
 
 When new visual decisions are made, update this file so it remains the single source of truth.
