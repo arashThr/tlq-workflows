@@ -155,12 +155,14 @@ const commands = [
   -metadata artist="TLQ / Arash & Amin" \\
   -metadata album="The Last Question" \\
   -metadata date="2026" \\
+  -metadata comment="https://tlq.dev" \\
+  -metadata publisher="TLQ.dev" \\
   -metadata:s:v title="Cover" \\
   -metadata:s:v comment="Cover (front)" \\
   output.mp3`
       }
     ],
-    notes: "Replace the metadata values and filenames. Cover should be a square JPEG (ideally 1400×1400 or larger).<br><br>A simple local script is also available in the repo (<code>add-metadata.sh</code>) that prompts for the values."
+    notes: "Replace the metadata values and filenames. Cover should be a square JPEG (ideally 1400×1400 or larger).<br><br>Website is stored in the <code>comment</code> and <code>publisher</code> tags so players can show it. To have the URL visible <em>on</em> the cover image itself, add the text to the image before attaching it.<br><br>A simple local script is also available in the repo (<code>add-metadata.sh</code>) that prompts for the values."
   }
 ];
 
