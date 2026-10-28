@@ -1,66 +1,62 @@
 # TLQ Design System
 
-Single source of truth for visual direction, poster templates, and brand decisions for **The Last Question** (TLQ).
+Single source of truth for visual direction, poster/cover templates, and brand decisions for **The Last Question** (TLQ).
 
 Last updated: 2026-10-28
 
 ## Visual Direction
 
-- **Black and white only** — pure high-contrast monochrome. No color, no gradients, no glow.
-- **Minimal and classy** — vast negative space, precise geometry, refined typography.
-- **Inspired by Asimov’s “The Last Question”** — themes of entropy, heat death, computation across cosmic time, a single persistent question.
-- **Restrained tech / cyberpunk feeling** — subtle circuit-like grids, data dissolution, binary fragments. Not flashy, not neon, not cyberpunk cliché.
-- **Future-oriented and computational** without decoration.
-- Posters must be easy to update in Mac Preview: clear zones for episode number + title.
-- Must remain readable and strong as small covers / thumbnails.
+- **Black and white only** — pure high-contrast monochrome. Flat, no color, no gradients, no glow, no shadows, no texture.
+- **Minimal and classy** — precise geometry, generous negative space, strong typography.
+- **Monospaced typography** for a technical, terminal-like, computational feel.
+- **Inspired by Asimov’s “The Last Question”** without literal illustration.
+- Must work strongly as a **square 1:1 podcast cover** (and remain readable at small sizes).
 
-## Concepts Considered
+## Concepts Considered (historical)
 
-### 1. The Persistent Question (Circuit Question Mark) ✅ Chosen Direction
-Large white question mark formed by fine circuit traces and sparse binary fragments on pure black. Strong clear silhouette that stays readable at small sizes. Generous negative space. Title at the top, episode number under it, website at the very bottom.
+### 1. The Persistent Question (Circuit Question Mark)
+Large white question mark formed by fine circuit traces and sparse binary fragments. Title at top, episode number, website at bottom.
 
-**Status:** Selected as the primary poster style (better for small covers than the dissolving grid).
+**Status:** Used briefly, then superseded.
 
 ### 2. Entropy Field
-Sparse geometric grid of thin white lines and dots. Dense at the top, slowly dissolves / breaks apart / fades toward the bottom. One tiny, perfectly sharp white question mark remains intact near the vertical center. Vast negative space. Clean lower third reserved for text.
+Dissolving geometric grid of lines and dots with a tiny central question mark.
 
-**Status:** Considered and initially liked, but rejected because it does not hold up well at small cover sizes.
+**Status:** Rejected for poor small-cover readability.
 
 ### 3. Pure Signal
-Typography-led. Elegant white “THE LAST QUESTION” in the upper third. Thin horizontal broken data line or sparse binary fragment below that fades out. Clean empty lower band for episode text.
+Typography-led with a thin data line.
 
-**Status:** Strong secondary option. Liked, but not chosen for covers.
+**Status:** Considered, not chosen.
 
-## Final Chosen Design (The Persistent Question)
+## Final Chosen Design (Square Monospaced Cover)
 
-Reference poster layout:
-- Title: **The Last Question** at the top (elegant white font)
-- Episode number (e.g. **EP 00**) directly under the title
-- Large central question mark made of fine circuit traces + sparse binary fragments
-- Website **tlq.dev** at the very bottom of the cover
+**Format:** Square podcast cover, 1:1 aspect ratio.
 
-The composition is intentionally simple and high-contrast so the episode number can be updated easily while the circuit question mark and overall structure stay locked.
+**Specification:**
+- Pure black background
+- Thin white square frame inset about 7% from each edge
+- Centered in the upper half: the letters **TLQ** in a huge bold monospaced typeface, white, tight but not touching
+- Below that: the words **THE LAST QUESTION** in smaller white monospaced capitals with wide letter-spacing
+- Near the bottom: **ARASH · AMIN** in even smaller white monospaced capitals, also letter-spaced
+- No photographs, no gradients, no shadows, no rounded corners, no texture
+- Flat black and white only
 
-### Prompt used (Grok Imagine)
+This is the locked master cover style.
+
+### Prompt / Description used
 
 ```
-Minimal black and white poster, pure black background, large bold white question mark made of fine circuit traces and sparse binary fragments, very clean high-contrast silhouette readable at small thumbnail size, generous negative space, title "The Last Question" in elegant white font at the top, episode number "EP 00" in bold white below the title, website "tlq.dev" in white at the very bottom, thin horizontal rule near bottom if needed, classy restrained tech style, Asimov The Last Question inspired, no neon, no glow, no people, no extra text, vertical poster composition
+Square podcast cover, 1:1, pure black background. A thin white square frame inset about 7% from each edge. Centered in the upper half, the letters TLQ in a huge bold monospaced typeface, white, tight but not touching. Below that, the words THE LAST QUESTION in smaller white monospaced capitals with wide letter-spacing. Near the bottom, ARASH · AMIN in even smaller white monospaced capitals, also letter-spaced. No photographs, no gradients, no shadows, no rounded corners, no texture. Flat black and white only.
 ```
-
-(The tighter version of the original Persistent Question prompt was used.)
-
-### Other prompts (for reference)
-
-Entropy Field and Pure Signal prompts are kept in git history if needed later.
 
 ## How to Update for a New Episode
 
-1. Start from the master Persistent Question base (or the current reference poster).
-2. In Mac Preview (or any editor):
-   - Change the episode number (currently “EP 00”).
-   - Optionally adjust or add an episode title if desired in the upper text zone.
-3. Keep the circuit question mark, title treatment, and bottom website untouched.
-4. Export high-resolution PNG/JPG for Telegram (TLQ Dev) and the website (tlq.dev).
+The master cover is mostly static. For episode-specific versions:
+1. Start from the master square cover.
+2. Optionally overlay or replace text zones if an episode title or number needs to appear (while preserving the frame, TLQ, and hosts line).
+3. Keep the monospaced treatment and pure black/white constraint.
+4. Export high-resolution square PNG/JPG for podcast platforms, Telegram (TLQ Dev), and the website (tlq.dev).
 
 ## Brand Notes
 
@@ -68,7 +64,7 @@ Entropy Field and Pure Signal prompts are kept in git history if needed later.
 - Short: **TLQ**
 - Website: **tlq.dev**
 - Telegram: **TLQ Dev**
-- Co-hosted with Amin
+- Co-hosted with Amin (shown as ARASH · AMIN on cover)
 - Topics: recent tech & AI events and their impact on developers, human life, and the economy
 - Recording: Zencaster
 - Editing: OneShot + Borumi
@@ -77,6 +73,6 @@ Entropy Field and Pure Signal prompts are kept in git history if needed later.
 ## Files
 
 - This document: `design/README.md`
-- Reference poster image: `design/poster-persistent-question-reference.jpg`
+- Reference cover image should live alongside this file (e.g. `design/cover-square-monospaced-reference.jpg` or `.png`).
 
 When new visual decisions are made, update this file so it remains the single source of truth.
