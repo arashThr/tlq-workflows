@@ -130,7 +130,28 @@ const commands = [
     tags: ["oneshot", "audio", "normalize", "lufs"],
     description: "After creating the project, normalize the sound.",
     commands: [],
-    notes: "Set the <strong>Target</strong> to the same value on both tracks.<br><br>Common targets for dialogue / voice:<ul style=\"margin:0.4rem 0 0 1.1rem;\"><li><strong>-16 LUFS</strong> — recommended for podcasts</li><li>-23 LUFS — broadcast standard</li><li>-14 LUFS — if you want it louder</li></ul>"
+    notes: "Set the <strong>Target</strong> to the same value on both tracks.<br><br><strong>Recommended for YouTube conversational dialogue: -14 LUFS</strong><br>This matches YouTube’s loudness target for online video and keeps speech clear and present without being overly loud or crushed."
+  },
+  {
+    id: "add-cover-metadata",
+    category: "Audio",
+    title: "Add cover art & metadata to MP3",
+    tags: ["ffmpeg", "metadata", "cover", "id3", "mp3"],
+    description: "Attach cover image and basic metadata to the extracted audio.",
+    commands: [
+      {
+        label: "FFmpeg command",
+        code: `ffmpeg -i input.mp3 -i cover.jpg -map 0 -map 1 -c copy -id3v2_version 3 \\
+  -metadata title="TLQ 01 — Episode Title" \\
+  -metadata artist="TLQ / Arash & Amin" \\
+  -metadata album="The Last Question" \\
+  -metadata date="2026" \\
+  -metadata:s:v title="Cover" \\
+  -metadata:s:v comment="Cover (front)" \\
+  output.mp3`
+      }
+    ],
+    notes: "Replace the metadata values and filenames. Cover should be a square JPEG (ideally 1400×1400 or larger).<br><br>A simple local script is also available in the repo (<code>add-metadata.sh</code>) that prompts for the values."
   }
 ];
 
