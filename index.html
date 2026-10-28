@@ -38,6 +38,51 @@
     outline: none;
   }
   .search-box:focus { border-color: var(--accent); }
+  .pipeline {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.15rem 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .pipeline h2 { font-size: 1.15rem; margin-bottom: 0.8rem; }
+  .step {
+    border-bottom: 1px solid var(--border);
+    padding: 0.7rem 0;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+  }
+  .step-header:hover { color: var(--accent); }
+  .step-num {
+    background: var(--accent);
+    color: #0f1117;
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.6rem;
+    flex-shrink: 0;
+  }
+  .step-body {
+    display: none;
+    padding: 0.6rem 0 0.2rem 2rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .step.open .step-body { display: block; }
+  .step-body ul { margin: 0.4rem 0 0 1.1rem; }
+  .step-body a { color: var(--accent); text-decoration: none; }
+  .step-body a:hover { text-decoration: underline; }
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -91,6 +136,7 @@
   .notes { margin-top: 0.7rem; font-size: 0.85rem; color: var(--muted); }
   .empty { text-align: center; color: var(--muted); padding: 2rem; }
   footer { margin-top: 2.5rem; text-align: center; color: var(--muted); font-size: 0.78rem; }
+  .section-title { font-size: 1.05rem; margin: 1.2rem 0 0.6rem; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -100,8 +146,97 @@
     <p class="subtitle">Private commands & flows for The Last Question</p>
   </header>
 
-  <input type="text" class="search-box" id="search" placeholder="Search…" autofocus>
+  <input type="text" class="search-box" id="search" placeholder="Search commands…" autofocus>
 
+  <div class="pipeline" id="pipeline">
+    <h2>Episode Pipeline</h2>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.8rem;">Start-to-finish flow. Click a step to expand. We’ll fill each one in over time.</p>
+
+    <div class="step">
+      <div class="step-header"><span class="step-num">1</span> Collect notes & research</div>
+      <div class="step-body">
+        Gather topic ideas, recent events in tech/AI, quotes, and angles. Decide the core question for the episode.
+        <ul>
+          <li>Notes go into whatever you use (Notion, text, etc.)</li>
+          <li>Identify 3–5 key points and any guests or clips</li>
+        </ul>
+        <em>(More structure coming)</em>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-header"><span class="step-num">2</span> Record on Zencaster</div>
+      <div class="step-body">
+        Record the conversation with Amin.
+        <ul>
+          <li>Use Zencaster for remote recording</li>
+          <li>Export the final video + separate audio tracks if needed</li>
+        </ul>
+        <em>(Details to be added)</em>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-header"><span class="step-num">3</span> Edit video & normalize audio</div>
+      <div class="step-body">
+        Edit in OneShot and Borumi. Normalize sound.
+        <ul>
+          <li>See <a href="#oneshot-normalize">Normalize audio in OneShot</a> — Target <strong>-14 LUFS</strong> on both tracks for YouTube dialogue</li>
+          <li>Export final video</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-header"><span class="step-num">4</span> Extract audio + add cover & metadata</div>
+      <div class="step-body">
+        Turn the video into a podcast-ready MP3.
+        <ul>
+          <li><a href="#extract-audio">Extract audio</a> — high-quality VBR MP3</li>
+          <li><a href="#add-cover-metadata">Add cover art & metadata</a> (includes tlq.dev in comment/publisher)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-header"><span class="step-num">5</span> Upload audio to Cloudflare R2</div>
+      <div class="step-body">
+        Host the MP3 so you can link it from the website.
+        <ul>
+          <li><a href="#upload-r2">Upload audio to Cloudflare R2</a></li>
+          <li>Recommended custom domain: <code>audio.tlq.dev</code></li>
+          <li>Public link example: <code>https://audio.tlq.dev/tlq-01.mp3</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-header"><span class="step-num">6</span> Publish video & podcast</div>
+      <div class="step-body">
+        Release the episode.
+        <ul>
+          <li>Video: upload to YouTube (or wherever you host video)</li>
+          <li>Podcast: Telegram channel <strong>TLQ Dev</strong> + website <strong>TLQ.dev</strong></li>
+          <li>Link the R2 audio URL on the episode page</li>
+        </ul>
+        <em>(Publishing checklist coming)</em>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-header"><span class="step-num">7</span> Announce & posts</div>
+      <div class="step-body">
+        Share the episode.
+        <ul>
+          <li>Telegram post, social, etc.</li>
+          <li>Use the poster design system for visuals</li>
+        </ul>
+        <em>(Templates and process coming)</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">All commands & references</div>
   <div id="results"></div>
 
   <footer>Last updated: 2026-10-28 · Personal use only</footer>
@@ -184,7 +319,7 @@ function render(list) {
     return;
   }
   resultsEl.innerHTML = list.map(cmd => `
-    <article class="card" data-id="${cmd.id}">
+    <article class="card" id="${cmd.id}" data-id="${cmd.id}">
       <div class="category">${cmd.category || ""}</div>
       <h2>${cmd.title}</h2>
       <div class="tags">${cmd.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
@@ -229,6 +364,13 @@ function filter() {
   });
   render(filtered);
 }
+
+// Pipeline accordion
+document.querySelectorAll(".step-header").forEach(header => {
+  header.addEventListener("click", () => {
+    header.parentElement.classList.toggle("open");
+  });
+});
 
 searchEl.addEventListener("input", filter);
 render(commands);
