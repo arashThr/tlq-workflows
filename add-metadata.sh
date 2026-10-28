@@ -20,6 +20,8 @@ read -rp "Album (default: The Last Question): " ALBUM
 ALBUM=${ALBUM:-"The Last Question"}
 read -rp "Year (default: 2026): " YEAR
 YEAR=${YEAR:-"2026"}
+read -rp "Website (default: https://tlq.dev): " WEBSITE
+WEBSITE=${WEBSITE:-"https://tlq.dev"}
 
 ffmpeg -y -i "$INPUT" -i "$COVER" \
   -map 0 -map 1 \
@@ -29,6 +31,8 @@ ffmpeg -y -i "$INPUT" -i "$COVER" \
   -metadata artist="$ARTIST" \
   -metadata album="$ALBUM" \
   -metadata date="$YEAR" \
+  -metadata comment="$WEBSITE" \
+  -metadata publisher="TLQ.dev" \
   -metadata:s:v title="Cover" \
   -metadata:s:v comment="Cover (front)" \
   "$OUTPUT"
