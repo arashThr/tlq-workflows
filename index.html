@@ -179,9 +179,9 @@
     <div class="step">
       <div class="step-header"><span class="step-num">3</span> Edit video & normalize audio</div>
       <div class="step-body">
-        Edit in OneShot and Borumi. Normalize sound.
+        Edit in Shotcut and Borumi. Normalize sound.
         <ul>
-          <li>See <a href="#oneshot-normalize">Normalize audio in OneShot</a> — Target <strong>-14 LUFS</strong> on both tracks for YouTube dialogue</li>
+          <li>See <a href="#shotcut-normalize">Normalize audio in Shotcut</a> — Target <strong>-14 LUFS</strong> on both tracks for YouTube dialogue</li>
           <li>Export final video</li>
         </ul>
       </div>
@@ -268,10 +268,10 @@ const commands = [
     notes: "MP3 with high-quality VBR (~190 kbps). Transparent for speech, widely compatible for podcasts. Use <code>-n</code> to avoid overwriting."
   },
   {
-    id: "oneshot-normalize",
-    category: "Editing — OneShot",
-    title: "Normalize audio in OneShot",
-    tags: ["oneshot", "audio", "normalize", "lufs"],
+    id: "shotcut-normalize",
+    category: "Editing — Shotcut",
+    title: "Normalize audio in Shotcut",
+    tags: ["shotcut", "audio", "normalize", "lufs"],
     description: "After creating the project, normalize the sound.",
     commands: [],
     notes: "Set the <strong>Target</strong> to the same value on both tracks.<br><br><strong>Recommended for YouTube conversational dialogue: -14 LUFS</strong><br>This matches YouTube’s loudness target for online video and keeps speech clear and present without being overly loud or crushed."
