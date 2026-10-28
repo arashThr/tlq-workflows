@@ -163,6 +163,15 @@ const commands = [
       }
     ],
     notes: "Replace the metadata values and filenames. Cover should be a square JPEG (ideally 1400×1400 or larger).<br><br>Website is stored in the <code>comment</code> and <code>publisher</code> tags so players can show it. To have the URL visible <em>on</em> the cover image itself, add the text to the image before attaching it.<br><br>A simple local script is also available in the repo (<code>add-metadata.sh</code>) that prompts for the values."
+  },
+  {
+    id: "upload-r2",
+    category: "Publishing",
+    title: "Upload audio to Cloudflare R2",
+    tags: ["cloudflare", "r2", "hosting", "upload", "audio", "podcast", "cdn"],
+    description: "Host the final MP3 so you can link it from TLQ.dev.",
+    commands: [],
+    notes: "<strong>One-time setup</strong><ol style=\"margin:0.4rem 0 0 1.1rem;\"><li>Create a Cloudflare account (if needed) and enable R2.</li><li>Create a bucket (e.g. <code>tlq-audio</code>).</li><li>In the bucket → Settings → Custom Domains → Connect Domain (recommended: <code>audio.tlq.dev</code>). Domain must already be on Cloudflare. Cloudflare adds the CNAME automatically. Wait until status is Active.</li></ol><br><strong>Upload an episode (easiest)</strong><br>Dashboard: open the bucket → Upload → drag the MP3. Name it clearly (e.g. <code>tlq-01.mp3</code>).<br><br><strong>Public link</strong><br><code>https://audio.tlq.dev/tlq-01.mp3</code><br><br>R2 has free egress, which is ideal for podcasts. Dashboard upload is fine for occasional episodes. For CLI later: Wrangler or rclone with S3-compatible credentials."
   }
 ];
 
