@@ -52,11 +52,7 @@ Square podcast cover, 1:1, pure black background. A thin white square frame inse
 
 ## How to Update for a New Episode
 
-The master cover is mostly static. For episode-specific versions:
-1. Start from the master square cover.
-2. Optionally overlay or replace text zones if an episode title or number needs to appear (while preserving the frame, TLQ, and hosts line).
-3. Keep the monospaced treatment and pure black/white constraint.
-4. Export high-resolution square PNG/JPG for podcast platforms, Telegram (TLQ Dev), and the website (tlq.dev).
+`publish-episode.sh` replaces the episode number on the EP02 cover. The frame, TLQ, and hosts line stay as they are.
 
 ## Brand Notes
 

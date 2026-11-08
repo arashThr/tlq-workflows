@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Add cover art and basic metadata to an MP3 for TLQ
+# Add cover art and basic metadata to an MP3 for TLQ.
+# Prefer ./publish-episode.sh, which also extracts the audio and writes the episode page.
 # Usage: ./add-metadata.sh input.mp3 cover.jpg [output.mp3]
 
 set -euo pipefail
@@ -14,8 +15,8 @@ COVER="$2"
 OUTPUT="${3:-${INPUT%.*}-meta.mp3}"
 
 read -rp "Title: " TITLE
-read -rp "Artist (default: TLQ / Arash & Amin): " ARTIST
-ARTIST=${ARTIST:-"TLQ / Arash & Amin"}
+read -rp "Artist (default: Arash & Amin): " ARTIST
+ARTIST=${ARTIST:-"Arash & Amin"}
 read -rp "Album (default: The Last Question): " ALBUM
 ALBUM=${ALBUM:-"The Last Question"}
 read -rp "Year (default: 2026): " YEAR
@@ -27,8 +28,10 @@ ffmpeg -y -i "$INPUT" -i "$COVER" \
   -map 0 -map 1 \
   -c copy \
   -id3v2_version 3 \
+  -write_id3v1 1 \
   -metadata title="$TITLE" \
   -metadata artist="$ARTIST" \
+  -metadata album_artist="$ARTIST" \
   -metadata album="$ALBUM" \
   -metadata date="$YEAR" \
   -metadata comment="$WEBSITE" \
