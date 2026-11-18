@@ -93,14 +93,14 @@ const commands = [
     blocks: [
       {
         label: "",
-        code: './publish-episode.sh "/path/to/TLQ-EP02.mp4" topics.txt'
+        code: './publish-episode.sh "/path/to/TLQ-EP03.mp4" topics.txt'
       },
       {
         label: "topics.txt",
-        code: "04:02.000–04:10.970 · You Can See Everything\nPHP2Shell"
+        code: "1. 00:01:16.480–00:01:38.000 · Wolfenstein 3D\nOriginal source · id Software / Bethesda"
       }
     ],
-    notes: "Writes TLQ-EP02.mp3, the cover, and commits the episode page. Upload that mp3 to audio.tlq.dev before you push."
+    notes: "Times are positions in the finished video. The page shows each start time, rounded to the nearest second. If the notes were taken before the intro, add --before-intro. Upload the mp3 before you push."
   }
 ];
 
